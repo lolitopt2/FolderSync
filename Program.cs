@@ -4,11 +4,11 @@
     {
         static void Main(string[] args)
         {
-            string sourceDir = @"C:\Users\pedro\Desktop\tudo\teste";
-            string destinationDir = @"C:\Users\pedro\Desktop\tudo\test7";
+            string sourceDir = @"C:\Users\pedro\Desktop\tudo\teste";//Puth the origin path
+            string destinationDir = @"C:\Users\pedro\Desktop\tudo\test7";//Put the replica path 
 
             //Sync 
-            int intervalo = 1 * 60 * 1000;
+            int intervalo = 1 * 60 * 1000; //running the sync every 1 minute
 
             //Create a timer
             Timer timer = new Timer(SyncDirectories, new { SourceDir = sourceDir, DestinationDir = destinationDir }, 0, intervalo);
@@ -16,11 +16,12 @@
 
 
 
-         
 
+           
             Console.WriteLine("Sync satrated. Press Q to quit");
             while (Console.ReadKey(true).Key != ConsoleKey.Q)
             {
+               
 
             }
             timer.Dispose();
@@ -30,6 +31,7 @@
             {
 
             }
+
 
             if (Directory.Exists(destinationDir))
             {
@@ -81,7 +83,20 @@
                         Directory.CreateDirectory(destinationDir);
                     }
 
-                    // Get all files in the source directory
+                    //Couldnt get access to the folder because of permissions in my system
+
+                    //string[] folders =Directory.GetDirectories(sourceDir);
+                    //foreach(string folder in folders)
+                    //{
+                    //    string folderName=Path.GetFileName(folder);
+                    //    string destFile = Path.Combine(destinationDir, folderName);
+                    //    File.Copy(folder, destFile, true);
+                    //}
+
+
+
+
+                    // Get all files in the source directory except folders
                     string[] files = Directory.GetFiles(sourceDir);
 
                     // Copy each file to the destination directory
