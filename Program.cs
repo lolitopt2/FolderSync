@@ -4,9 +4,14 @@
     {
         static void Main(string[] args)
         {
-            string sourceDir = @"C:\Users\pedro\Desktop\tudo\teste";//Puth the origin path
-            string destinationDir = @"C:\Users\pedro\Desktop\tudo\test7";//Put the replica path 
+            //string sourceDir = @"C:\Users\pedro\Desktop\tudo\teste";//Puth the origin path
+            //string destinationDir = @"C:\Users\pedro\Desktop\tudo\test7";//Put the replica path 
 
+            Console.WriteLine("Enter the path of the source directory: 'ex:C:\\Users\\pedro\\Desktop\\tudo\\teste'");
+            string sourceDir = Console.ReadLine();
+
+            Console.WriteLine("Enter the path of the destination directory:'ex C:\\Users\\pedro\\Desktop\\tudo\\teste'");
+            string destinationDir = Console.ReadLine();
             //Sync 
             int intervalo = 1 * 60 * 1000; //running the sync every 1 minute
 
